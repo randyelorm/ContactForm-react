@@ -1,0 +1,39 @@
+.form-box {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: cadetblue;
+    font-family: 'Itim', cursive;
+    
+}
+
+input {
+    margin: 1rem;
+    box-shadow: 0 0 1em rgba(0,0,0,0.2);
+    padding: 0.4rem;
+    font-family: 'Itim', cursive;
+    font-size: 1.5rem;
+   
+}
+
+
+
+
+h3 {
+    margin: 0px;
+   
+    padding:0px;
+    
+}
+
+.submit-btn {
+    background-color: tomato;
+    color:black;
+    font-weight: bold;
+    border:none;
+    padding:1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    font-size: 1.2rem;
+    border-radius: 20px;
+}
