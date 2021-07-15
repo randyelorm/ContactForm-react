@@ -1,8 +1,9 @@
 
 
 import React, { Component } from 'react';
-import Contacts from './Components/CONTACTS/Contacts';
+
 import ContactsForm from "./Components/CONTACTSFORM/ContactsForm"
+import UserList from './UserList';
 
 class App extends Component {
   constructor (props) {
@@ -38,8 +39,20 @@ class App extends Component {
 
 
   handleAddContact = (newUser) => {
+        newUser.id = Math.random.toString()
         this.setState({
           contacts: [...this.state.contacts, newUser]
+        })
+  }
+
+  handleDelete = (selected_contact_id)=> {
+      let notDeletedContacts =  this.state.contacts.filter(
+            (each_contact_id_in_array)=> {
+                return each_contact_id_in_array.id !== selected_contact_id
+                
+            })
+          this.setState({
+          contacts: notDeletedContacts
         })
   }
 
@@ -50,22 +63,9 @@ class App extends Component {
     return (
       <center>
         <ContactsForm addUser ={this.handleAddContact}/>
+        <UserList Contacts_in_App_state = {this.state.contacts} selected_id = {this.handleDelete} />
         <br/>
-        {
-
-          this.state.contacts.map(
-            (contact,index)=> {
-              return(
-                <div>
-                <Contacts key ={index} name ={contact.name} number ={contact.number} location = {contact.location}/>
-                
-               </div>
-              )
-            }
-          )
-
-
-        }
+   
       </center>
     );
   }
