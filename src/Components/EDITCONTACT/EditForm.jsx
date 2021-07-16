@@ -80,7 +80,7 @@ class EditForm extends Component {
                    />
                </label>
 
-               <button className ="submit-btn" type= "submit"> Update Changes </button>
+               <button className ="submit-btn" onClick = {this.props.update_top} type= "submit"> Update Changes </button>
             </form>
         );
     }

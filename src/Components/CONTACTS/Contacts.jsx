@@ -19,6 +19,23 @@ const Contacts = ({each_contact, deleteContact, editContact }) => {
         
     }
 
+    const [update_top_text, setUpdate_top] = useState({
+          text: "New Contact added",
+          color: "green"
+    })
+
+
+    const Update_Top = (event)=> {
+      setUpdate_top({
+        text: "Contact Edited Successfully.",
+        color:"purple"
+      })
+      
+    }
+
+    
+ 
+
     return (
         <>
          <Modal show={show} onHide={handleClose}>
@@ -27,13 +44,14 @@ const Contacts = ({each_contact, deleteContact, editContact }) => {
         </Modal.Header>
         <Modal.Body>
             
-        <EditForm each_contact = {each_contact} editContact = {editContact}  closeModal = {handleClose}/>
+        <EditForm each_contact = {each_contact} editContact = {editContact}  closeModal = {handleClose} update_top = {Update_Top}/>
 
         </Modal.Body>
         
       </Modal>
         <div className = "contact-box">
-          <h4 className ="new-text">New Contact Added</h4>
+          <h4 style = {{color: update_top_text.color}} >{update_top_text.text}</h4>
+         
           <h1>{each_contact.name} </h1> 
           <h2>{each_contact.number}</h2>
           <h3>{each_contact.location}</h3> <br />
