@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 
 import ContactsForm from "./Components/CONTACTSFORM/ContactsForm"
-import UserList from './UserList';
+import UserList from './Components/USERLIST/UserList';
 
 class App extends Component {
   constructor (props) {
@@ -39,7 +39,8 @@ class App extends Component {
 
 
   handleAddContact = (newUser) => {
-        newUser.id = Math.random.toString()
+        newUser.id = Math.random().toString()
+      
         this.setState({
           contacts: [...this.state.contacts, newUser]
         })
@@ -56,6 +57,17 @@ class App extends Component {
         })
   }
 
+  handleEdit = (selected_contact_id, Updated_contact_form) => {
+
+      this.setState({
+        contacts: this.state.contacts.map(
+          (each_contact)=> {
+             return each_contact.id === selected_contact_id ? Updated_contact_form : each_contact
+          }
+        )
+      })
+  }
+
 
   render() {
 
@@ -63,7 +75,7 @@ class App extends Component {
     return (
       <center>
         <ContactsForm addUser ={this.handleAddContact}/>
-        <UserList Contacts_in_App_state = {this.state.contacts} selected_id = {this.handleDelete} />
+        <UserList Contacts_in_App_state = {this.state.contacts} selected_id = {this.handleDelete} editContact = {this.handleEdit}/>
         <br/>
    
       </center>

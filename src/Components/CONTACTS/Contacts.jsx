@@ -1,25 +1,48 @@
 
-import React from 'react';
+import React, {useState} from 'react';
 import "./Contacts.css"
 import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import EditForm from "../EDITCONTACT/EditForm"
 
 
-const Contacts = ({each_contact, deleteContact }) => {
+const Contacts = ({each_contact, deleteContact, editContact }) => {
+
+    const [show, setShow] = useState(false);
+        const handleClose = () => setShow(false);
+        const handleShow = () => setShow(true);
+    
 
     const handleDelete = (event) => {
         deleteContact(each_contact.id)
+
+        
     }
 
     return (
+        <>
+         <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Edit Contact</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+            
+        <EditForm each_contact = {each_contact} editContact = {editContact}  closeModal = {handleClose}/>
+
+        </Modal.Body>
+        
+      </Modal>
         <div className = "contact-box">
           <h4 className ="new-text">New Contact Added</h4>
           <h1>{each_contact.name} </h1> 
           <h2>{each_contact.number}</h2>
           <h3>{each_contact.location}</h3> <br />
           <Button variant="secondary" onClick = {handleDelete} > <i class="fas fa-trash-alt"></i> Delete Contact</Button>{' '}
-          <Button variant="primary" > <i class="fas fa-user-edit"></i>  Edit Contact</Button>{' '}
+          <Button variant="primary" onClick = {handleShow} > <i class="fas fa-user-edit"></i>  Edit Contact</Button>{' '}
+          <hr/>
 
         </div>
+        </>
     );
 }
 

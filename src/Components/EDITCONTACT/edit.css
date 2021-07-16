@@ -1,0 +1,28 @@
+.edit-form-box {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: cadetblue; */
+    font-family: 'Itim', cursive;
+   
+}
+
+input {
+    margin: 1rem;
+    box-shadow: 0 0 1em rgba(0,0,0,0.2);
+    padding: 0.4rem;
+    font-family: 'Itim', cursive;
+    font-size: 1.5rem;
+   
+}
+
+label {
+    padding-left: 1rem;
+}
+
+h3 {
+    margin: 0px;
+   
+    padding:0px;
+    
+}
