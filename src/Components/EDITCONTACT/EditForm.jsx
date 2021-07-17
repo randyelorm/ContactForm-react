@@ -11,14 +11,20 @@ class EditForm extends Component {
             name : props.each_contact.name,
             number : props.each_contact.number,
             location: props.each_contact.location,
-            id: props.each_contact.id
+            id: props.each_contact.id,
+            text: "Type In Your Changes",
+            disabled: true
         }
     }
 
 
     handleChange = (event) => {
         this.setState({
-            [event.target.name]: event.target.value
+            [event.target.name]: event.target.value,
+            disabled: false,
+            text: "Update Changes"
+           
+            
         })
         
     }
@@ -80,7 +86,7 @@ class EditForm extends Component {
                    />
                </label>
 
-               <button className ="submit-btn" onClick = {this.props.update_top} type= "submit"> Update Changes </button>
+               <button className ="submit-btn" onClick = {this.props.update_top} disabled = {this.state.disabled} type= "submit"> {this.state.text} </button>
             </form>
         );
     }

@@ -11,24 +11,42 @@ const Contacts = ({each_contact, deleteContact, editContact }) => {
     const [show, setShow] = useState(false);
         const handleClose = () => setShow(false);
         const handleShow = () => setShow(true);
-    
+
+
+
+    // const [showdelete, setShowDelete] = useState({
+    //           showmodal: false,
+    //           mydeleted:  ""
+
+    // });
+
+    // const handleDeleteShow = () => setShowDelete({
+    //   mydeleted: deleteContact(each_contact.id),
+    //   showmodal: true,
+      
+    // });
+
+    // const handleDeleteClose = () => setShowDelete(false);
+
 
     const handleDelete = (event) => {
         deleteContact(each_contact.id)
-
+        
         
     }
 
     const [update_top_text, setUpdate_top] = useState({
           text: "New Contact added",
-          color: "green"
+          color: "green",
+          
     })
 
 
     const Update_Top = (event)=> {
       setUpdate_top({
         text: "Contact Edited Successfully.",
-        color:"purple"
+        color:"purple",
+     
       })
       
     }
@@ -38,7 +56,7 @@ const Contacts = ({each_contact, deleteContact, editContact }) => {
 
     return (
         <>
-         <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Edit Contact</Modal.Title>
         </Modal.Header>
@@ -49,6 +67,19 @@ const Contacts = ({each_contact, deleteContact, editContact }) => {
         </Modal.Body>
         
       </Modal>
+
+      {/* <Modal show={showdelete.showmodal} onHide={handleDeleteClose}>
+        <Modal.Header closeButton>
+         
+        </Modal.Header>
+        <Modal.Body>
+            
+        Contact Deleted Successfully
+
+        </Modal.Body>
+        
+      </Modal> */}
+
         <div className = "contact-box">
           <h4 style = {{color: update_top_text.color}} >{update_top_text.text}</h4>
          
