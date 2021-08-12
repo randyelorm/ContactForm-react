@@ -23,7 +23,7 @@ class ContactsForm extends Component {
     }
 
     handleSubmit = (event)=> {
-        console.log("form-submitted")
+     
         this.props.addUser(this.state)
         this.setState({
             name : "",

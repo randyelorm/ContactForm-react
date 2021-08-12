@@ -14,19 +14,7 @@ const Contacts = ({each_contact, deleteContact, editContact }) => {
 
 
 
-    // const [showdelete, setShowDelete] = useState({
-    //           showmodal: false,
-    //           mydeleted:  ""
-
-    // });
-
-    // const handleDeleteShow = () => setShowDelete({
-    //   mydeleted: deleteContact(each_contact.id),
-    //   showmodal: true,
-      
-    // });
-
-    // const handleDeleteClose = () => setShowDelete(false);
+  
 
 
     const handleDelete = (event) => {
