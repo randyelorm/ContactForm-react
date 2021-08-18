@@ -6,8 +6,8 @@ const intialState = {
 const ContactReducer = (state = intialState, action)=> {
 
     switch (action.type) {
-        case "ADD_USER":
-            return state
+        case "ADD_CONTACT":
+            return {...state.contacts, contacts:[...state.contacts, action.payload]}
         
         default: 
         return state

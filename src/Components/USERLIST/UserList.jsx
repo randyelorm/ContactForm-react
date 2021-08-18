@@ -1,9 +1,10 @@
 import React from 'react';
 import Contacts from '../CONTACTS/Contacts';
+import { connect } from 'react-redux';
 
-const UserList = ({Contacts_in_App_state, selected_id, editContact}) => {
+const UserList = ({contacts, selected_id, editContact}) => {
 
-        const userList = Contacts_in_App_state.map (
+        const userList = contacts.map (
                 (each_contact_in_App_state)=> {
                     return <Contacts 
                             each_contact = {each_contact_in_App_state}  
@@ -21,4 +22,10 @@ const UserList = ({Contacts_in_App_state, selected_id, editContact}) => {
     );
 }
 
-export default UserList;
+ const mapStateToProps=(state)=> {
+     return {
+        contacts: state.contacts
+     }
+ }
+
+export default connect (mapStateToProps)(UserList) ;

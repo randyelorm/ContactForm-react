@@ -6,36 +6,7 @@ import ContactsForm from "./Components/CONTACTSFORM/ContactsForm"
 import UserList from './Components/USERLIST/UserList';
 
 class App extends Component {
-  constructor (props) {
-        super (props)
-
-        this.state = {
-
-           contacts : [
-
-                    // {
-                    //   name: "Randy",
-                    //   number: 508574901,
-                    //   location: "Legon"
-                    // },
-
-                    // {
-                    //   name: "Elorm",
-                    //   number: 2445721447,
-                    //   location: "Tesano"
-                    // },
-
-                    // {
-                    //   name: "Davoh",
-                    //   number: 2649621247,
-                    //   location: "Tesano"
-                    // },
-
-
-
-                ]
-        }
-  }
+ 
 
 
   handleAddContact = (newUser) => {
@@ -75,7 +46,7 @@ class App extends Component {
     return (
       <center>
         <ContactsForm addUser ={this.handleAddContact}/>
-        <UserList Contacts_in_App_state = {this.state.contacts} selected_id = {this.handleDelete} editContact = {this.handleEdit}/>
+        <UserList/>
         <br/>
    
       </center>
