@@ -3,7 +3,7 @@ import "./Form.css"
 import Button from 'react-bootstrap/Button';
 
 import { connect } from 'react-redux';
-import {addContact} from "../../ACTIONS/contactActions"
+import { addContact } from "../../ACTIONS/contactActions"
 
 class ContactsForm extends Component {
 

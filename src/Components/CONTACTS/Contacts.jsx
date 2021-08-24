@@ -2,11 +2,13 @@
 import React, {useState} from 'react';
 import "./Contacts.css"
 import Button from 'react-bootstrap/Button';
+import { connect } from 'react-redux';
+import { DeleteContact} from "../../ACTIONS/contactActions"
 import Modal from 'react-bootstrap/Modal';
 import EditForm from "../EDITCONTACT/EditForm"
 
 
-const Contacts = ({each_contact, deleteContact, editContact }) => {
+const Contacts = ({each_contact, DeleteContact, editContact }) => {
 
     const [show, setShow] = useState(false);
         const handleClose = () => setShow(false);
@@ -18,7 +20,7 @@ const Contacts = ({each_contact, deleteContact, editContact }) => {
 
 
     const handleDelete = (event) => {
-        deleteContact(each_contact.id)
+        DeleteContact(each_contact.id)
         
         
     }
@@ -83,5 +85,12 @@ const Contacts = ({each_contact, deleteContact, editContact }) => {
     );
 }
 
-export default Contacts;
+const mapDispatchToProps = {
+  
+  DeleteContact: DeleteContact
+
+}
+
+
+export default connect(null, mapDispatchToProps)(Contacts);
 
