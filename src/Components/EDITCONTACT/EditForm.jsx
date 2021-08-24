@@ -33,7 +33,7 @@ class EditForm extends Component {
 
     handleSubmit = (event)=> {
         event.preventDefault()
-        this.props.EditContact(this.state)
+        this.props.EditContact(this.state.id, this.state)
         this.setState({
             name : "",
             number : "",

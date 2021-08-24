@@ -10,12 +10,14 @@ export const addContact =(contact)=> {
 
 }
 
-export const EditContact = (updatedContact)=> {
+export const EditContact = (contact_id, updatedContact)=> {
     updatedContact.id = Math.random().toString()
 
     return {
         type: "EDIT_CONTACT",
-        payload: updatedContact
+        contact_id : contact_id,
+        updatedContact : updatedContact
+        
     }
 }
 
