@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import "./edit.css"
 import { connect } from 'react-redux';
 import {EditContact} from "../../ACTIONS/contactActions"
-import Button from 'react-bootstrap/Button';
+
 
 class EditForm extends Component {
 

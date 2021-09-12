@@ -5,9 +5,9 @@ import { connect } from 'react-redux';
 const UserList = ({contacts, selected_id, editContact}) => {
 
         const userList = contacts.map (
-                (each_contact_in_App_state)=> {
+                (each_contact)=> {
                     return <Contacts 
-                            each_contact = {each_contact_in_App_state}  
+                            each_contact = {each_contact}  
                             deleteContact = {selected_id}
                             editContact = {editContact}
                             />
@@ -22,9 +22,8 @@ const UserList = ({contacts, selected_id, editContact}) => {
     );
 }
 
- const mapStateToProps=(state)=> {
-    // console.log(state.contacts)
-    // Where is the state from? and how did it connect to the userlist
+ const mapStateToProps=(state)=> { 
+  
      return {
         contacts: state.contacts
     

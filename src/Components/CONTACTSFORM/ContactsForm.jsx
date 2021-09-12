@@ -92,4 +92,6 @@ const mapDispatchToProps = {
         addNewContact: addContact
 }
 
+
+
 export default connect(null, mapDispatchToProps)(ContactsForm);
