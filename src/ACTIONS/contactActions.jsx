@@ -3,10 +3,24 @@
 
 export const addContact =(contact)=> {
     contact.id = Math.random().toString()
-    return {
-        type: "ADD_CONTACT",
-        payload: contact
-    }
+    // return {
+    //     type: "ADD_CONTACT",
+    //     payload: contact
+    // }
+
+    return(dispatch,state,{getFirestore})=>{
+
+        getFirestore().collection("contact").add(contact).then(
+            (docs)=> {
+               console.log(docs)
+            }
+        )
+  
+  
+        
+  
+  
+      }
 
 }
 
