@@ -14,3 +14,15 @@ const Store = createStore(ContactReducer, compose(
     ))
 
 export default Store
+
+
+// What is react-redux-firebase and redux firestore and why are we installing them and the stuff they come with like
+// getfirebase, reactReduxFirebase etc.
+// Explanation for compose
+
+
+//Redux is a state mangagment system we are using. Firebase has its own state so the react-redux-firebase and redux
+// firestore helps sync what you have locally to the firebase state on thier system.
+
+
+// 

@@ -8,21 +8,18 @@ export const addContact =(contact)=> {
     //     payload: contact
     // }
 
-    return(dispatch,state,{getFirestore})=>{
+    return(dispatch, state, {getFirestore})=>{
 
         getFirestore().collection("contact").add(contact).then(
             (docs)=> {
                console.log(docs)
+            
             }
-        )
-  
-  
-        
-  
-  
-      }
+        ) }
+
 
 }
+
 
 export const EditContact = (contact_id, updatedContact)=> {
     updatedContact.id = Math.random().toString()
@@ -46,4 +43,38 @@ export const DeleteContact = (id) => {
     
 }
 
-// How is action linked to the reducer?
+
+export const getAllContacts = ()=> {
+    return(dispatch, state, {getFirestore})=> {
+        getFirestore().collection("contact").onSnapshot(
+            (snapshot)=>{
+                let contacts = []
+                snapshot.forEach(
+                    (doc)=> {
+                        contacts.push(doc.data())
+                    }
+
+                )
+
+                
+                dispatch(
+                    {
+                        type: "SET_ALL_CONTACTS",
+                        payload: contacts
+                    }
+                )
+
+            }
+
+           
+
+
+        )
+
+    }
+
+
+}
+
+
+

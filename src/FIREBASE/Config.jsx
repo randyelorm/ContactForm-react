@@ -19,5 +19,10 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 
+// firebase.initializeApp(firebaseConfig);
+// firebase.firestore()
 
 export default firebase
+
+
+// Explanation for the importation of firebase and firestore.

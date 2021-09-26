@@ -1,5 +1,6 @@
 const intialState = {
-    contacts: []
+    contacts: [],
+ 
 }
 
 
@@ -31,6 +32,9 @@ const ContactReducer = (state = intialState, action)=> {
                     })
         
                     return {contacts: notDeletedContacts }
+
+            case "SET_ALL_CONTACTS":
+                return {...state, contacts: action.payload}
         
         default: 
         return state
