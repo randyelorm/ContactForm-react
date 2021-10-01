@@ -45,4 +45,5 @@ const ContactReducer = (state = intialState, action)=> {
 export default ContactReducer
 
 
-// How is the reducer linked to the action. 
+// What is the difference between the add new contact spread and the set and edit new contact
+// spread.
