@@ -21,6 +21,7 @@ const Contacts = ({each_contact, DeleteContact, editContact }) => {
 
     const handleDelete = (event) => {
         DeleteContact(each_contact.id)
+      
         
         
     }
@@ -53,7 +54,7 @@ const Contacts = ({each_contact, DeleteContact, editContact }) => {
         <Modal.Body>
             
         <EditForm each_contact = {each_contact} editContact = {editContact}  closeModal = {handleClose} update_top = {Update_Top}/>
-
+        
         </Modal.Body>
         
       </Modal>

@@ -32,7 +32,7 @@ export const EditContact = (contact_id, updatedContact)=> {
         
     // }
     return (dispatch, state, {getFirestore})=> {
-        getFirestore().collection("contact").doc(contact_id).set(updatedContact) 
+        getFirestore().collection("contact").doc(contact_id).update(updatedContact) 
         .then(
             ()=> {
                 console.log("Document updated Successfully")
