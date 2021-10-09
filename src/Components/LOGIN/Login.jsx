@@ -41,7 +41,7 @@ const Login = (props) => {
             <h2 > Welcome to Contacts. Please <span className ="Login">LOGIN</span> </h2> 
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label className = "label-text">Email address</Form.Label>
-                <Form.Control type="email" placeholder="Enter E mail" name = "email" className = "Login-form-input" required = "required" />
+                <Form.Control type="email" placeholder="Enter E-mail" name = "email" className = "Login-form-input" required = "required" />
                
             </Form.Group>
 
