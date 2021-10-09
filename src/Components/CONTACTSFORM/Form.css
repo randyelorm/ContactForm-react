@@ -20,13 +20,8 @@
     padding:1rem;
 }
 
-input {
-    margin: 1rem;
-    box-shadow: 0 0 1em rgba(0,0,0,0.2);
-    padding: 0.4rem;
-    font-family: 'Itim', cursive;
-    font-size: 1.5rem;
-   
+.contact-form-input {
+    margin-right: 1rem;
 }
 
 
