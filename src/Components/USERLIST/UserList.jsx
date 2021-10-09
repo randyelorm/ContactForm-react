@@ -1,6 +1,7 @@
 import React from 'react';
 import Contacts from '../CONTACTS/Contacts';
 import { connect } from 'react-redux';
+import "./userlist.css"
 
 const UserList = ({contacts, selected_id, editContact}) => {
           
@@ -18,8 +19,9 @@ const UserList = ({contacts, selected_id, editContact}) => {
 
 
     return (
-        <div>
-           {userList} 
+        <div >
+            <h3 className = "text-center">ALL CONTACTS</h3>
+        <span className ="userList">{userList} </span>   
         </div>
     );
 }
@@ -27,7 +29,7 @@ const UserList = ({contacts, selected_id, editContact}) => {
  const mapStateToProps=(state)=> { 
   
      return {
-        contacts: state.contacts
+        contacts: state.contactReducer.contacts
     
      }
      

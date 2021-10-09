@@ -1,3 +1,7 @@
+// Redux Thunk is a middleware that lets you call action creators that return a function
+//  instead of an action object. That function receives the store’s dispatch method, 
+// which is then used to dispatch regular synchronous actions inside the function’s 
+// body once the asynchronous operations have been completed.
 
 
 
@@ -106,3 +110,5 @@ export const getAllContacts = ()=> {
 
 
 
+// we we use a return function. Why code does not work when we remove dispatch and state
+// even when we are not using them 

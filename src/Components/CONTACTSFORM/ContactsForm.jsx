@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import "./Form.css"
 import Button from 'react-bootstrap/Button';
-
+import Form from 'react-bootstrap/Form';
 import { connect } from 'react-redux';
 import { addContact, getAllContacts } from "../../ACTIONS/contactActions"
+import { Logout } from "../../ACTIONS/authAction"
+
 
 class ContactsForm extends Component {
 
@@ -46,55 +48,84 @@ class ContactsForm extends Component {
 
     render() {
         return (
-            <form onSubmit = {this.handleSubmit} className ="form-box">
-                <h1>Add a New Contact</h1>
-               <label htmlFor="name"> 
-                   <h3>Name </h3>
-                   <input 
-                   type="text" 
-                   name = "name" 
-                   value = {this.state.name} 
-                   onChange ={this.handleChange}
-                   placeholder ="Enter Your Name"
-                   required = "required"
-                   />
-               </label>
+            <>
+               <Button variant="danger" className = "logout-btn"  onClick = {this.props.Logout}>
+                 Logout <i class="fas fa-reply"></i>
+           </Button>
+             <Form onSubmit = {this.handleSubmit} className ="form-box">
+          <div className = "title-nd-logout-div">
+             <h1>Add a New Contact</h1>
+           
+           </div>   
+        
+          <Form.Group className="form-group" controlId="formBasicEmail">
+              <Form.Label className = "label-text"> <h3>Name</h3> </Form.Label>
+              <Form.Control 
+              type="text" 
+              placeholder="Enter Name" 
+              name = "name" 
+              className = "contact-form-input" 
+              required = "required" 
+              value = {this.state.name} 
+              onChange ={this.handleChange}
+              />
+             
+          </Form.Group>
 
-               <label htmlFor="number"> 
-                   <h3>Number</h3> 
-                   <input 
-                   type="number" 
-                   name = "number" 
-                   value = {this.state.number}  
-                   onChange ={this.handleChange}
-                   placeholder= "Enter Your Number" 
-                   required = "required"
-                   
-                   />
-               </label>
+          <Form.Group className=" form-group" controlId="formBasicEmail">
+              <Form.Label className = "label-text"><h3>Number</h3> </Form.Label>
+              <Form.Control 
+              type="number" 
+              placeholder="Enter Number" 
+              name = "number" 
+              className = "contact-form-input" 
+              required = "required" 
+              value = {this.state.number} 
+              onChange ={this.handleChange}
+              />
+             
+          </Form.Group>
 
-               <label htmlFor="location"> 
-                  <h3>Location</h3> 
-                   <input 
-                   type="text" 
-                   name = "location" 
-                   value = {this.state.location}  
-                   onChange ={this.handleChange} 
-                   placeholder = "Enter Your Location"
-                   required = "required"
-                   
-                   />
-               </label>
+          <Form.Group className="mb-3 form-group" controlId="">
+              <Form.Label className = "label-text"><h3>Location</h3> </Form.Label>
+              <Form.Control 
+               type="text" 
+                placeholder="Enter Location"
+               name = "location" 
+               className = "contact-form-input" 
+               required = "required" 
+               value = {this.state.location} 
+               onChange ={this.handleChange}
+               
+               />
+         <Button variant="primary" className = "submit-btn" type="submit">
+             Submit <i class="fas fa-user-plus"></i > 
+        </Button>
+     <br />
+       
+          </Form.Group>
+         
+   
+     
 
-               <input className ="submit-btn" type= "submit" />
-            </form>
+      <br />
+     
+      
+   
+ 
+       </Form>
+
+    
+    
+            </>
         );
     }
 }
 
 const mapDispatchToProps = {
         addNewContact: addContact,
-        getAllContacts: getAllContacts
+        getAllContacts: getAllContacts,
+        Logout:Logout
 }
 
 

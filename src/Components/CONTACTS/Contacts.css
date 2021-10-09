@@ -1,5 +1,4 @@
 .contact-box {
-    background-color: burlywood;
     color:black;
     font-family: 'Itim', cursive;
     padding: 1rem;
@@ -8,5 +7,13 @@
 
 .new-text {
     color:green;
+}
+
+.contact-info {
+    font-weight: bold;
+}
+
+.card {
+    box-shadow: 0 0 1em rgba(0,0,0,0.5);
 }
 

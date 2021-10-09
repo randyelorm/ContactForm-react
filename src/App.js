@@ -1,9 +1,9 @@
 
 
 import React, { Component } from 'react';
+import Router from './ROUTERS/Router';
 
-import ContactsForm from "./Components/CONTACTSFORM/ContactsForm"
-import UserList from './Components/USERLIST/UserList';
+
 
 class App extends Component {
  
@@ -13,9 +13,9 @@ class App extends Component {
 
     return (
       <center>
-        <ContactsForm/>
-        <UserList/>
-        <br/>
+        <Router/>
+       
+       
    
       </center>
     );

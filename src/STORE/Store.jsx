@@ -1,12 +1,17 @@
-import {createStore , compose, applyMiddleware} from "redux"
+import {createStore , compose, applyMiddleware, combineReducers} from "redux"
 import ContactReducer from "../REDUCERS/ContactReducer"
-import {getFirebase, reactReduxFirebase,} from "react-redux-firebase"
+import {firebaseReducer, getFirebase, reactReduxFirebase,} from "react-redux-firebase"
 import {getFirestore, reduxFirestore} from "redux-firestore"
 import thunk from "redux-thunk"
 import firebase from "../FIREBASE/Config"
 
+let reducers = combineReducers({
+  contactReducer : ContactReducer,
+   firebase: firebaseReducer,
+})
 
-const Store = createStore(ContactReducer, compose(
+
+const Store = createStore(reducers, compose(
     applyMiddleware(thunk.withExtraArgument({getFirebase, getFirestore})),
     reactReduxFirebase(firebase),
     reduxFirestore(firebase)
@@ -22,7 +27,7 @@ export default Store
 
 
 //Redux is a state mangagment system we are using. Firebase has its own state so the react-redux-firebase and redux
-// firestore helps sync what you have locally to the firebase state on thier system.
+// firestore helps sync what you have locally to the firebase state on their system.
 
 
 // 

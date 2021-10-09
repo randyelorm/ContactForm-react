@@ -1,0 +1,68 @@
+
+ .SignUp-Container { 
+    padding:2rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+ 
+   .SignUp-img{
+     width: 100%;
+     margin-bottom: 1rem;
+     border-radius: 50px;
+   }
+ 
+   .Sign_Up {
+     color:#0E6DFD !important;
+   }
+ 
+   .SignUp-btn{
+     margin-bottom: 1rem !important;
+   }
+ 
+   .label-text {
+       font-weight: bold;
+       text-align: left;
+       padding-left: 0rem !important;
+   }
+
+   .google-btn {
+       background-color: white !important;
+       color:black!important;
+   }
+
+   .login-btn {
+       margin-bottom: 3rem;
+       background-color: dimgrey !important;
+       border:1px solid black !important;
+       
+   }
+
+   .google-logo {
+    width: 20px;
+}
+ 
+ 
+ 
+ @media only screen and (min-width:768px) {
+ 
+  
+   .SignUp-Container {
+     display:grid !important;
+     grid-template-columns: 1fr 1fr;
+     justify-content: center;
+     margin-top: 4rem;
+     
+    
+   }
+ 
+   
+   .Sign-up-form-input {
+     width: 70% !important;
+   }
+   
+   
+   
+ 
+ 
+ }

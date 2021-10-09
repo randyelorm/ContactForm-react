@@ -6,6 +6,9 @@ import { connect } from 'react-redux';
 import { DeleteContact} from "../../ACTIONS/contactActions"
 import Modal from 'react-bootstrap/Modal';
 import EditForm from "../EDITCONTACT/EditForm"
+import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup';
+
 
 
 const Contacts = ({each_contact, DeleteContact, editContact }) => {
@@ -59,27 +62,24 @@ const Contacts = ({each_contact, DeleteContact, editContact }) => {
         
       </Modal>
 
-      {/* <Modal show={showdelete.showmodal} onHide={handleDeleteClose}>
-        <Modal.Header closeButton>
-         
-        </Modal.Header>
-        <Modal.Body>
-            
-        Contact Deleted Successfully
-
-        </Modal.Body>
-        
-      </Modal> */}
+   
 
         <div className = "contact-box">
-          <h4 style = {{color: update_top_text.color}} >{update_top_text.text}</h4>
-         
-          <h1>{each_contact.name} </h1> 
-          <h2>{each_contact.number}</h2>
-          <h3>{each_contact.location}</h3> <br />
-          <Button variant="secondary" onClick = {handleDelete} > <i class="fas fa-trash-alt"></i> Delete Contact</Button>{' '}
-          <Button variant="primary" onClick = {handleShow} > <i class="fas fa-user-edit"></i>  Edit Contact</Button>{' '}
-          <hr/>
+          {/* <h4 style = {{color: update_top_text.color}} >{update_top_text.text}</h4> */}
+
+          <Card style={{ width: '18rem' }} className ="card">
+        <ListGroup variant="flush">
+        <ListGroup.Item>Name: <span className = "contact-info">{each_contact.name}  </span> </ListGroup.Item>
+        <ListGroup.Item>Email: <span className = "contact-info">{each_contact.number}</span> </ListGroup.Item>
+        <ListGroup.Item>Contact: <span className = "contact-info">{each_contact.location} </span></ListGroup.Item>
+  
+        <ListGroup.Item>   
+            <Button variant="primary" onClick={handleShow}>Edit <i class="fas fa-edit"></i></Button>{' '} 
+           <Button variant="secondary" onClick ={handleDelete}>Delete <i class="far fa-trash-alt"></i></Button>{' '}
+          </ListGroup.Item>
+        </ListGroup>
+      </Card>
+  
 
         </div>
         </>
